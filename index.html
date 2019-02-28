@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SCCA AutoX 022419 Runs</title>
+
+  <script src='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.2.0/mapbox.css' rel='stylesheet' />
+  <style media="screen">
+    body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  /* Overidden legend styles */
+  /* Tom McWright blocks legend sample code */
+.wax-legend .overlay-legend {
+  padding-top: 1px;
+  min-width: 143px;
+  }
+.wax-legend .title {
+  text-align: left;
+  margin-bottom: 1px;
+  font-weight: bold;
+  font-size: 90%;
+  line-height: 14px;
+  width: 143px;
+  }
+.wax-legend .title2 {
+  text-align: left;
+  margin-top: 1px;
+  margin-bottom: 4px;
+  font-size: 75%;
+  line-height: 14px;
+  width: 143px;
+  }
+.wax-legend .overlay-legend.drought .title2 {
+  width: 185px;
+  }
+.wax-legend .overlay-legend.commitment .title {
+  width: 160px;
+  }
+.wax-legend .scale {
+  clear: both;
+  }
+.wax-legend .scale ul {
+  margin: 0;
+  padding: 0;
+  list-style: none !important;
+  -webkit-padding-start: 0 !important;
+  }
+.wax-legend .scale ul li {
+  font-size: 80%;
+  list-style: none !important;
+  margin-left: 0px !important;
+  padding:2px 0;
+  }
+.wax-legend ul.labels li span {
+  display:inline-block;
+  vertical-align:middle;
+  height: 16px;
+  width: 30px;
+  border: .5px solid #333;
+  margin-right: 5px;
+  margin-left: 0px !important;
+  }
+.wax-legend ul li span {
+  display: block;
+  margin-left: 0px !important;
+  }
+.wax-legend .source1 {
+  font-size: 70%;
+  color: #666;
+  margin-top: 1px;
+  clear: both;
+  }
+.wax-legend .source2 {
+  font-size: 70%;
+  color: #666;
+  margin-top: 1px;
+  clear: both;
+  }
+.wax-attribution a,
+.wax-legend a {
+  color: #7F8A8C;
+  text-decoration: none !important;
+  }
+  </style>
+
+
+  </script>
+
+  </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+  <script type="text/javascript">
+    L.mapbox.accessToken = 'pk.eyJ1IjoicGV0ZXJtOTUwMTgiLCJhIjoiTWpFVTFVNCJ9.02rGGMIWgLdCfbVinaSZeQ';
+    var map = L.mapbox.map('map', 'mapbox.streets').setView([37.4073632, -121.1100906],20);
+
+    var myLayer = L.mapbox.featureLayer().loadURL('https://raw.githubusercontent.com/peterm95018/scca-autoX-022419/master/map.geojson').addTo(map);
+    map.addControl(L.mapbox.legendControl().addLegend('<div class="overlay-legend"><div class="scale"> <h3>SCCA AutoX 022419</h3><ul class="labels">     <li><span style="background:yellow;"></span>Run 1 - 61.871</li><li><span style="background:green;"></span>Run 2 - 59.709</li><li><span style="background:blue;"></span>Run 3 - 60.109</li><li><span style="background:red;"></span>Run 4 - 58.938</li></ul> </div> </div>'));
+
+  </script>
+</html>
